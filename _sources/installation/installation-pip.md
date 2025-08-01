@@ -37,4 +37,5 @@ pip install -U "jax[tpu]"
 If you continue to experience issues:
 
 1. Check the [UV Installation Guide](installation-uv) as an alternative
-2. [Open an issue](https://github.com/pal-robotics/brax_training_viewer/issues) on GitHub 
+2. Review the [Troubleshooting Guide](troubleshooting) for common solutions
+3. [Open an issue](https://github.com/pal-robotics/brax_training_viewer/issues) on GitHub 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>HTTP Endpoints &#8212; Brax Viewer</title>
+    <title>Troubleshooting &#8212; Brax Viewer</title>
   
   
   
@@ -57,12 +57,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'web-api/http-endpoints';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'installation/troubleshooting';</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="WebSocket Endpoints" href="websocket-endpoints.html" />
-    <link rel="prev" title="Web API" href="../web-api.html" />
+    <link rel="next" title="Quick Start" href="../quick-start.html" />
+    <link rel="prev" title="UV Installation" href="installation-uv.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,17 +181,17 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../installation.html">Installation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../installation/installation-pip.html">Pip Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/installation-uv.html">UV Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../installation.html">Installation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="installation-pip.html">Pip Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-uv.html">UV Installation</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Troubleshooting</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../quick-start.html">Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage-guide.html">Usage Guide</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../web-api.html">Web API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">HTTP Endpoints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="websocket-endpoints.html">WebSocket Endpoints</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../web-api.html">Web API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../web-api/http-endpoints.html">HTTP Endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../web-api/websocket-endpoints.html">WebSocket Endpoints</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../python-api.html">Python API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -286,7 +286,7 @@
       
       
       
-      <li><a href="https://github.com/pal-robotics/brax_training_viewer/issues/new?title=Issue%20on%20page%20%2Fweb-api/http-endpoints.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/pal-robotics/brax_training_viewer/issues/new?title=Issue%20on%20page%20%2Finstallation/troubleshooting.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -316,7 +316,7 @@
       
       
       
-      <li><a href="../_sources/web-api/http-endpoints.md" target="_blank"
+      <li><a href="../_sources/installation/troubleshooting.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -400,7 +400,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>HTTP Endpoints</h1>
+    <h1>Troubleshooting</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -410,15 +410,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-interface">Main Interface</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get"><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-issues">Common Issues</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#empty-brax-submodule">Empty Brax Submodule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#official-brax-package-conflict">Official Brax Package Conflict</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#port-conflicts">Port Conflicts</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rendering-status-api">Rendering Status API</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-api-rendering-status"><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/api/rendering_status</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#post-api-rendering-status"><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/api/rendering_status</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help">Getting Help</a></li>
 </ul>
             </nav>
         </div>
@@ -430,106 +428,49 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="http-endpoints">
-<h1>HTTP Endpoints<a class="headerlink" href="#http-endpoints" title="Link to this heading">#</a></h1>
-<p>The Brax Web Viewer provides HTTP endpoints for server control and status management.</p>
-<section id="main-interface">
-<h2>Main Interface<a class="headerlink" href="#main-interface" title="Link to this heading">#</a></h2>
-<section id="get">
-<h3><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/</span></code><a class="headerlink" href="#get" title="Link to this heading">#</a></h3>
-<p>Returns the main HTML viewer interface.</p>
-<p><strong>Response</strong>: HTML page with the 3D visualization interface</p>
-<p><strong>Description</strong>:</p>
-<ul class="simple">
-<li><p>Serves the main viewer page</p></li>
-<li><p>If system JSON is available, renders the viewer with the system configuration</p></li>
-<li><p>Otherwise, shows a waiting page with instructions</p></li>
-</ul>
-<p><strong>Example Usage</strong>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>http://127.0.0.1:8000/
+  <section class="tex2jax_ignore mathjax_ignore" id="troubleshooting">
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h1>
+<p>This guide covers common installation issues and their solutions.</p>
+<section id="common-issues">
+<h2>Common Issues<a class="headerlink" href="#common-issues" title="Link to this heading">#</a></h2>
+<section id="empty-brax-submodule">
+<h3>Empty Brax Submodule<a class="headerlink" href="#empty-brax-submodule" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong>: The <code class="docutils literal notranslate"><span class="pre">./brax</span></code> folder is empty after cloning.</p>
+<p><strong>Solution</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run submodule update</span>
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
 </pre></div>
 </div>
 </section>
-</section>
-<section id="rendering-status-api">
-<h2>Rendering Status API<a class="headerlink" href="#rendering-status-api" title="Link to this heading">#</a></h2>
-<section id="get-api-rendering-status">
-<h3><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/api/rendering_status</span></code><a class="headerlink" href="#get-api-rendering-status" title="Link to this heading">#</a></h3>
-<p>Returns the current rendering status.</p>
-<p><strong>Response</strong>:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;rendering_enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><strong>Description</strong>: Returns the current rendering enabled state from the server.</p>
-<p><strong>Example Usage</strong>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>http://127.0.0.1:8000/api/rendering_status
-</pre></div>
-</div>
-<p><strong>Python Example</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<section id="official-brax-package-conflict">
+<h3>Official Brax Package Conflict<a class="headerlink" href="#official-brax-package-conflict" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong>: During verification, you see <code class="docutils literal notranslate"><span class="pre">AssertionError:</span> <span class="pre">Official</span> <span class="pre">Brax</span> <span class="pre">detected.</span> <span class="pre">Install</span> <span class="pre">modified</span> <span class="pre">version</span> <span class="pre">instead.</span></code></p>
+<p><strong>Solution</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uninstall official brax</span>
+pip<span class="w"> </span>uninstall<span class="w"> </span>brax
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://127.0.0.1:8000/api/rendering_status&quot;</span><span class="p">)</span>
-<span class="n">status</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rendering enabled: </span><span class="si">{</span><span class="n">status</span><span class="p">[</span><span class="s1">&#39;rendering_enabled&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Install the modified version</span>
+pip<span class="w"> </span>install<span class="w"> </span>./brax
 </pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you installed the official Brax package, uninstall it first before installing the modified version.</p>
 </div>
 </section>
-<section id="post-api-rendering-status">
-<h3><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/api/rendering_status</span></code><a class="headerlink" href="#post-api-rendering-status" title="Link to this heading">#</a></h3>
-<p>Sets the rendering state and broadcasts to all connected clients.</p>
-<p><strong>Request Body</strong>:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;rendering_enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><strong>Success Response</strong>:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;rendering_enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><strong>Error Response</strong>:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Error description&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><strong>Description</strong>:</p>
-<ul class="simple">
-<li><p>Updates the rendering status on the server</p></li>
-<li><p>Broadcasts the change to all connected control clients</p></li>
-<li><p>Returns the updated status</p></li>
-</ul>
-<p><strong>Example Usage</strong>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:8000/api/rendering_status<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;rendering_enabled&quot;: false}&#39;</span>
-</pre></div>
-</div>
-<p><strong>Python Example</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-
-<span class="c1"># Enable rendering</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-    <span class="s2">&quot;http://127.0.0.1:8000/api/rendering_status&quot;</span><span class="p">,</span>
-    <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;rendering_enabled&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
-<span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-
-<span class="c1"># Disable rendering</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-    <span class="s2">&quot;http://127.0.0.1:8000/api/rendering_status&quot;</span><span class="p">,</span>
-    <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;rendering_enabled&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
-<span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-</pre></div>
-</div>
+<section id="port-conflicts">
+<h3>Port Conflicts<a class="headerlink" href="#port-conflicts" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong>: <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">[Errno</span> <span class="pre">48]</span> <span class="pre">error</span> <span class="pre">while</span> <span class="pre">attempting</span> <span class="pre">to</span> <span class="pre">bind</span> <span class="pre">on</span> <span class="pre">address</span> <span class="pre">('x.x.x.x',</span> <span class="pre">xxxx):</span> <span class="pre">[errno</span> <span class="pre">48]</span> <span class="pre">address</span> <span class="pre">already</span> <span class="pre">in</span> <span class="pre">use</span></code></p>
+<p><strong>Solution</strong>: Check availability of a port. A port may still be occupied due to unexpected quit of a thread that uses the port.</p>
 </section>
+</section>
+<section id="getting-help">
+<h2>Getting Help<a class="headerlink" href="#getting-help" title="Link to this heading">#</a></h2>
+<p>If you continue to experience issues:</p>
+<ol class="arabic simple">
+<li><p>Check the <a class="reference internal" href="../installation.html"><span class="doc std std-doc">Installation Guide</span></a> for the complete setup process</p></li>
+<li><p><a class="reference external" href="https://github.com/pal-robotics/brax_training_viewer/issues">Open an issue</a> on GitHub</p></li>
+</ol>
 </section>
 </section>
 
@@ -546,7 +487,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./web-api"
+            path: "./installation"
         },
         predefinedOutput: true
     }
@@ -564,20 +505,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../web-api.html"
+       href="installation-uv.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Web API</p>
+        <p class="prev-next-title">UV Installation</p>
       </div>
     </a>
     <a class="right-next"
-       href="websocket-endpoints.html"
+       href="../quick-start.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">WebSocket Endpoints</p>
+        <p class="prev-next-title">Quick Start</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -597,15 +538,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-interface">Main Interface</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get"><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-issues">Common Issues</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#empty-brax-submodule">Empty Brax Submodule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#official-brax-package-conflict">Official Brax Package Conflict</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#port-conflicts">Port Conflicts</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rendering-status-api">Rendering Status API</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-api-rendering-status"><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/api/rendering_status</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#post-api-rendering-status"><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/api/rendering_status</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help">Getting Help</a></li>
 </ul>
   </nav></div>
 

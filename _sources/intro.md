@@ -1,11 +1,6 @@
-# Overview
-<div style="display: flex; align-items: center; justify-content: 
-center; margin: 20px 0;">
-  <img alt="Logo" src="_static/logo_fox.png" width="150" 
-  style="margin-right: 30px;"/>
-  <img alt="JAX SimViewer" src="_static/name.webp" width="500" 
-  style=""/>
-</div>
+<h1>
+  <a href="#"><img alt="BRAX Viewer" src="banner.png" width="100%"/></a>
+</h1>
 
 BraxViewer is a real-time, interactive web viewer for monitoring reinforcement learning (RL) policies during training on Brax, offering a convenient tool for debugging and analyzing the behavior of parallel environments in real-time, while seamlessly integrating into your current workflow.
 
@@ -13,30 +8,9 @@ Architected for JAX's Just-in-time (JIT) compilation paradigm, the viewer visual
 
 ## Key Features
 
-- **Real-time visualization**: Stream Brax environment states to a web browser
-- **JAX-compatible**: Designed to work seamlessly with JAX's JIT compilation
-- **Lightweight**: Minimal impact on training performance
-- **Web-based**: Access visualization from any device with a web browser
-- **Interactive controls**: Enable/disable rendering through the web interface
+- **Real-time visualization**: Stream Brax environment states in real-time
+- **Web-based**: Access visualization from any device with a web browser, perfect for remote headless training
+- **JAX-compatible**: Designed to work seamlessly with JAX's JIT compilation with minimal impact on training performance
+- **Lightweight**: Depends only on widely used standard packages
+- **Interactive controls**: Enable/disable rendering through the web interface to save compute resource on the fly
 - **Distributed architecture**: Viewer server runs independently from training process
-
-### About the Brax Submodule
-This project includes a custom Brax fork as a git submodule that contains additional features needed for the viewer.
-
-:::{important}
-This viewer requires the **modified Brax submodule** which contains additional features needed for real-time visualization. **DO NOT** install the official Brax package from PyPI as it is not compatible.
-:::
-
-## Documentation
-
-- [Quick Start](quick-start): Get up and running in minutes
-- [Usage Guide](usage-guide): Detailed usage patterns and customization
-- [Web API](web-api): HTTP and WebSocket endpoint documentation
-- [Python API](python-api): Python class and component documentation
-
-## Requirements
-
-- Python 3.10+
-- JAX
-- Web browser
-- Git (for submodule management)

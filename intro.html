@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Overview &#8212; Brax Viewer</title>
+    <title>Key Features &#8212; Brax Viewer</title>
   
   
   
@@ -177,7 +177,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Overview
+                    Key Features
                 </a>
             </li>
         </ul>
@@ -185,6 +185,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="installation.html">Installation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation/installation-pip.html">Pip Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/installation-uv.html">UV Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/troubleshooting.html">Troubleshooting</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick Start</a></li>
@@ -387,9 +388,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -400,24 +399,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Overview</h1>
+    <h1>Key Features</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">Key Features</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-brax-submodule">About the Brax Submodule</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -427,54 +413,21 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h1>
-<div style="display: flex; align-items: center; justify-content: 
-center; margin: 20px 0;">
-  <img alt="Logo" src="_static/logo_fox.png" width="150" 
-  style="margin-right: 30px;"/>
-  <img alt="JAX SimViewer" src="_static/name.webp" width="500" 
-  style=""/>
-</div>
+  <h1>
+  <a href="#"><img alt="BRAX Viewer" src="banner.png" width="100%"/></a>
+</h1>
 <p>BraxViewer is a real-time, interactive web viewer for monitoring reinforcement learning (RL) policies during training on Brax, offering a convenient tool for debugging and analyzing the behavior of parallel environments in real-time, while seamlessly integrating into your current workflow.</p>
 <p>Architected for JAX’s Just-in-time (JIT) compilation paradigm, the viewer visualizes states from JIT-compiled functions and vectorized (vmap) rollouts without breaking the computation flow. It streams data from the Python backend to a web frontend, which is perfect for monitoring remote, headless training sessions with only a web browser. A toggle allows you to pause state synchronization on the fly, minimizing performance impact.</p>
 <section id="key-features">
-<h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading">#</a></h2>
+<h1>Key Features<a class="headerlink" href="#key-features" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p><strong>Real-time visualization</strong>: Stream Brax environment states to a web browser</p></li>
-<li><p><strong>JAX-compatible</strong>: Designed to work seamlessly with JAX’s JIT compilation</p></li>
-<li><p><strong>Lightweight</strong>: Minimal impact on training performance</p></li>
-<li><p><strong>Web-based</strong>: Access visualization from any device with a web browser</p></li>
-<li><p><strong>Interactive controls</strong>: Enable/disable rendering through the web interface</p></li>
+<li><p><strong>Real-time visualization</strong>: Stream Brax environment states in real-time</p></li>
+<li><p><strong>Web-based</strong>: Access visualization from any device with a web browser, perfect for remote headless training</p></li>
+<li><p><strong>JAX-compatible</strong>: Designed to work seamlessly with JAX’s JIT compilation with minimal impact on training performance</p></li>
+<li><p><strong>Lightweight</strong>: Depends only on widely used standard packages</p></li>
+<li><p><strong>Interactive controls</strong>: Enable/disable rendering through the web interface to save compute resource on the fly</p></li>
 <li><p><strong>Distributed architecture</strong>: Viewer server runs independently from training process</p></li>
 </ul>
-<section id="about-the-brax-submodule">
-<h3>About the Brax Submodule<a class="headerlink" href="#about-the-brax-submodule" title="Link to this heading">#</a></h3>
-<p>This project includes a custom Brax fork as a git submodule that contains additional features needed for the viewer.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>This viewer requires the <strong>modified Brax submodule</strong> which contains additional features needed for real-time visualization. <strong>DO NOT</strong> install the official Brax package from PyPI as it is not compatible.</p>
-</div>
-</section>
-</section>
-<section id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference internal" href="quick-start.html"><span class="doc std std-doc">Quick Start</span></a>: Get up and running in minutes</p></li>
-<li><p><a class="reference internal" href="usage-guide.html"><span class="doc std std-doc">Usage Guide</span></a>: Detailed usage patterns and customization</p></li>
-<li><p><a class="reference internal" href="web-api.html"><span class="doc std std-doc">Web API</span></a>: HTTP and WebSocket endpoint documentation</p></li>
-<li><p><a class="reference internal" href="python-api.html"><span class="doc std std-doc">Python API</span></a>: Python class and component documentation</p></li>
-</ul>
-</section>
-<section id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Python 3.10+</p></li>
-<li><p>JAX</p></li>
-<li><p>Web browser</p></li>
-<li><p>Git (for submodule management)</p></li>
-</ul>
-</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -524,26 +477,6 @@ center; margin: 20px 0;">
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">Key Features</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-brax-submodule">About the Brax Submodule</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

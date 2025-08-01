@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Pip Installation" href="installation/installation-pip.html" />
-    <link rel="prev" title="Overview" href="intro.html" />
+    <link rel="prev" title="Key Features" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,7 +176,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Overview
+                    Key Features
                 </a>
             </li>
         </ul>
@@ -184,6 +184,7 @@
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Installation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation/installation-pip.html">Pip Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/installation-uv.html">UV Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/troubleshooting.html">Troubleshooting</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick Start</a></li>
@@ -416,15 +417,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verification">Verification</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-issues">Common Issues</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#brax-folder-is-empty">./brax folder is empty</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#you-see-assertionerror-official-brax-detected-install-modified-version-instead-during-verification-step">You see <code class="docutils literal notranslate"><span class="pre">AssertionError:</span> <span class="pre">Official</span> <span class="pre">Brax</span> <span class="pre">detected.</span> <span class="pre">Install</span> <span class="pre">modified</span> <span class="pre">version</span> <span class="pre">instead.</span></code> during Verification step</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#port-conflicts">Port Conflicts</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies">Dependencies</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a></li>
 </ul>
@@ -470,7 +462,7 @@ document.write(`
 <section id="repository-setup">
 <h3>Repository Setup<a class="headerlink" href="#repository-setup" title="Link to this heading">#</a></h3>
 <ol class="arabic">
-<li><p>Download the repo</p>
+<li><p>Download the repository</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/pal-robotics/brax_training_viewer.git
 </pre></div>
 </div>
@@ -481,6 +473,10 @@ document.write(`
 </div>
 </li>
 <li><p>Initialize submodules</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This project includes a custom Brax fork as a git submodule that contains additional features needed for the viewer.</p>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
 </pre></div>
 </div>
@@ -500,60 +496,28 @@ document.write(`
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;from braxviewer import WebViewer; from brax.training.agents.ppo import train as ppo; import inspect; assert &#39;render_fn&#39; in inspect.signature(ppo.train).parameters, &#39;Official Brax detected. Install modified version instead.&#39;&quot;</span>
 </pre></div>
 </div>
-<p>If no error is printed, your installation was successful! If you encounter an error, please refer to the <a class="reference internal" href="#troubleshooting"><span class="xref myst">Troubleshooting</span></a> section below for solutions.</p>
-</section>
-<section id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
-<section id="common-issues">
-<h3>Common Issues<a class="headerlink" href="#common-issues" title="Link to this heading">#</a></h3>
-<section id="brax-folder-is-empty">
-<h4>./brax folder is empty<a class="headerlink" href="#brax-folder-is-empty" title="Link to this heading">#</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run submodule update</span>
-git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
-</pre></div>
-</div>
-</section>
-<section id="you-see-assertionerror-official-brax-detected-install-modified-version-instead-during-verification-step">
-<h4>You see <code class="docutils literal notranslate"><span class="pre">AssertionError:</span> <span class="pre">Official</span> <span class="pre">Brax</span> <span class="pre">detected.</span> <span class="pre">Install</span> <span class="pre">modified</span> <span class="pre">version</span> <span class="pre">instead.</span></code> during Verification step<a class="headerlink" href="#you-see-assertionerror-official-brax-detected-install-modified-version-instead-during-verification-step" title="Link to this heading">#</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uninstall official brax</span>
-pip<span class="w"> </span>uninstall<span class="w"> </span>brax
-
-<span class="c1"># Install the modified version</span>
-pip<span class="w"> </span>install<span class="w"> </span>./brax
-</pre></div>
-</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>If you installed the official Brax package from PyPI, uninstall it first before installing the modified version.</p>
-</div>
-</section>
-<section id="port-conflicts">
-<h4>Port Conflicts<a class="headerlink" href="#port-conflicts" title="Link to this heading">#</a></h4>
-<p><code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">[Errno</span> <span class="pre">48]</span> <span class="pre">error</span> <span class="pre">while</span> <span class="pre">attempting</span> <span class="pre">to</span> <span class="pre">bind</span> <span class="pre">on</span> <span class="pre">address</span> <span class="pre">('x.x.x.x',</span> <span class="pre">xxxx):</span> <span class="pre">[errno</span> <span class="pre">48]</span> <span class="pre">address</span> <span class="pre">already</span> <span class="pre">in</span> <span class="pre">use</span></code></p>
-<p>Check availability of a port. A port may be occupied due to unexpected quit of a thread that uses the port.</p>
-</section>
-</section>
+<p>If no error is printed, your installation was successful! If you encounter an error, please refer to the <a class="reference internal" href="installation/troubleshooting.html"><span class="doc std std-doc">Troubleshooting Guide</span></a> for solutions.</p>
 </section>
 <section id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading">#</a></h2>
-<ul class="simple">
+<ul>
 <li><p><strong>FastAPI</strong> (≥0.115.13): Web framework</p></li>
 <li><p><strong>Uvicorn</strong> (≥0.34.3): ASGI server</p></li>
 <li><p><strong>WebSockets</strong> (≥15.0.1): Real-time communication</p></li>
 <li><p><strong>asyncio</strong> (≥3.4.3): Async support</p></li>
-<li><p><strong>JAX</strong>: For numerical computations - <a class="reference external" href="https://github.com/google/jax#installation">Install JAX</a></p></li>
-</ul>
+<li><p><strong>JAX</strong>: For numerical computations - <a class="reference external" href="https://github.com/google/jax#installation">Install JAX</a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Install the version compatible for your hardware to accelerate codes.</p>
 </div>
-<ul class="simple">
-<li><p><strong>Brax</strong>: For reinforcement learning environments (included as submodule)</p></li>
-</ul>
+</li>
+<li><p><strong>Brax</strong>: For reinforcement learning environments (included as submodule)</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>This viewer requires the <strong>modified Brax submodule</strong> which contains additional features needed for real-time visualization. <strong>DO NOT</strong> install the official Brax package from PyPI as it is not compatible.</p>
 </div>
+</li>
+</ul>
 </section>
 <section id="next-steps">
 <h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
@@ -600,7 +564,7 @@ pip<span class="w"> </span>install<span class="w"> </span>./brax
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Overview</p>
+        <p class="prev-next-title">Key Features</p>
       </div>
     </a>
     <a class="right-next"
@@ -635,15 +599,6 @@ pip<span class="w"> </span>install<span class="w"> </span>./brax
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verification">Verification</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-issues">Common Issues</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#brax-folder-is-empty">./brax folder is empty</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#you-see-assertionerror-official-brax-detected-install-modified-version-instead-during-verification-step">You see <code class="docutils literal notranslate"><span class="pre">AssertionError:</span> <span class="pre">Official</span> <span class="pre">Brax</span> <span class="pre">detected.</span> <span class="pre">Install</span> <span class="pre">modified</span> <span class="pre">version</span> <span class="pre">instead.</span></code> during Verification step</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#port-conflicts">Port Conflicts</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependencies">Dependencies</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a></li>
 </ul>

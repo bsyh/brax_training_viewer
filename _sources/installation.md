@@ -24,7 +24,7 @@ This guide covers installing BraxViewer and its dependencies.
 
 ### Repository Setup
 
-1. Download the repo
+1. Download the repository
     ```bash
     git clone https://github.com/pal-robotics/brax_training_viewer.git
     ```
@@ -33,6 +33,11 @@ This guide covers installing BraxViewer and its dependencies.
     cd brax_training_viewer
     ```
 3. Initialize submodules
+
+    :::{important}
+    This project includes a custom Brax fork as a git submodule that contains additional features needed for the viewer.
+    :::
+
     ```bash
     git submodule update --init --recursive
     ```
@@ -48,36 +53,7 @@ After installation, verify that BraxViewer and brax version:
 python -c "from braxviewer import WebViewer; from brax.training.agents.ppo import train as ppo; import inspect; assert 'render_fn' in inspect.signature(ppo.train).parameters, 'Official Brax detected. Install modified version instead.'"
 ```
 
-If no error is printed, your installation was successful! If you encounter an error, please refer to the [Troubleshooting](#troubleshooting) section below for solutions.
-
-## Troubleshooting
-
-### Common Issues
-
-#### ./brax folder is empty
-```bash
-# Run submodule update
-git submodule update --init --recursive
-```
-
-#### You see `AssertionError: Official Brax detected. Install modified version instead.` during Verification step
-```bash
-# Uninstall official brax
-pip uninstall brax
-
-# Install the modified version
-pip install ./brax
-```
-
-:::{important}
-If you installed the official Brax package from PyPI, uninstall it first before installing the modified version.
-:::
-
-#### Port Conflicts
-
-`ERROR: [Errno 48] error while attempting to bind on address ('x.x.x.x', xxxx): [errno 48] address already in use`
-
-Check availability of a port. A port may be occupied due to unexpected quit of a thread that uses the port.
+If no error is printed, your installation was successful! If you encounter an error, please refer to the [Troubleshooting Guide](installation/troubleshooting) for solutions.
 
 ## Dependencies
 
@@ -87,14 +63,14 @@ Check availability of a port. A port may be occupied due to unexpected quit of a
 - **asyncio** (≥3.4.3): Async support
 - **JAX**: For numerical computations - [Install JAX](https://github.com/google/jax#installation)
 
-:::{note}
-Install the version compatible for your hardware to accelerate codes.
-:::
+    :::{note}
+    Install the version compatible for your hardware to accelerate codes.
+    :::
 - **Brax**: For reinforcement learning environments (included as submodule)
 
-:::{important}
-This viewer requires the **modified Brax submodule** which contains additional features needed for real-time visualization. **DO NOT** install the official Brax package from PyPI as it is not compatible.
-:::
+    :::{important}
+    This viewer requires the **modified Brax submodule** which contains additional features needed for real-time visualization. **DO NOT** install the official Brax package from PyPI as it is not compatible.
+    :::
 
 ## Next Steps
 
