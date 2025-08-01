@@ -1,5 +1,5 @@
 <h1>
-  <a href="#"><img alt="BRAX Viewer" src="banner.png" width="100%"/></a>
+  <a href="#"><img alt="BRAX Viewer" src="_static/banner.png" width="100%"/></a>
 </h1>
 
 BraxViewer is a real-time, interactive web viewer for monitoring reinforcement learning (RL) policies during training on Brax, offering a convenient tool for debugging and analyzing the behavior of parallel environments in real-time, while seamlessly integrating into your current workflow.
