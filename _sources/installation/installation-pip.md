@@ -6,12 +6,16 @@ This guide covers installing dependencies using pip.
 
 1. Install the local Brax submodule
     ```bash
-    pip install -e ./brax
+    pip install ./brax
     ```
 2. Install braxviewer
     ```bash
     pip install .
     ```
+    
+    :::{note}
+    Use `pip install -e .` for development mode, which creates an editable installation that reflects code changes without reinstallation.
+    :::
 3. Install dependencies
     ```bash
     pip install -r requirements.txt

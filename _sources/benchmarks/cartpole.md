@@ -25,5 +25,6 @@ The benchmark is implemented in `benchmarks/brax/cartpole/time_test_small.py`. R
 
 | Hardware | No Viewer | Viewer OFF | Viewer ON |
 |----------|-----------|------------|-----------|
-| NVIDIA RTX A5000 | 61.21s | 47.11s | 106.81s |
 | Apple M1 Max (32-core GPU) | 20.63s | 18.17s | 51.54s |
+| NVIDIA RTX 5090 | 51.81s | 33.53s | 63.57s |
+| NVIDIA RTX A5000 | 61.21s | 47.11s | 106.81s |
